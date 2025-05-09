@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-     <!--To initialise the classes-->
-     <bean id = "debit" class="com.shubham.beans.DebitCardPayment"/> <!--self closing bean-->
-     
-     <bean id = "credit" class = "com.shubham.beans.CreditCardPayment"/>
-     
-     
-     
-     <bean id = "restaurant" class = "com.shubham.beans.RestaurantService" >
-     
-      <!--bean body to call setter method to allocate value to the iPayment field, 
+	<!--To initialise the classes-->
+	<bean id="debit" class="com.shubham.beans.DebitCardPayment" /> <!--self closing bean-->
+
+	<bean id="credit" class="com.shubham.beans.CreditCardPayment" />
+
+
+	<bean id="restaurant" class="com.shubham.beans.RestaurantService">
+
+		<!--bean body to call setter method to allocate value to the iPayment field, 
       first it will call to the setter method and then value will be assign-->
-      
-    <property name = "iPayment" ref = "credit" /> <!--property tag is used for setter injection-->
-    
-    <!--<constructor-arg name = "iPayment" ref = "debit" />-->    <!--constructor-tag is used for constructor injection-->
-    
-    
-    
-     </bean>
+
+		<property name="iPayment" ref="credit" /> <!--property tag is used for setter injection-->
+
+		<!--<constructor-arg name = "iPayment" ref = "debit" />-->    <!--constructor-tag is used for constructor injection-->
+
+
+	</bean>
 
 
 </beans>
